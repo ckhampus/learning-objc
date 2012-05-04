@@ -4,10 +4,12 @@ int main(int argc, const char * argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    int sum;
+    int value1, value2, sum;
     
-    sum = 50 + 25;
-    NSLog(@"The sum of 50 and 25 is %i", sum);
+    value1 = 50;
+    value2 = 25;
+    sum = value1 + value2;
+    NSLog(@"The sum of %i and %i is %i", value1, value2, sum);
     
     [pool drain];
     return 0;
