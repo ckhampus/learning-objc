@@ -35,17 +35,23 @@ int main(int argc, const char * argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    Fraction *myFraction;
+    Fraction *frac1 = [[Fraction alloc] init];
+    Fraction *frac2 = [[Fraction alloc] init];
     
-    myFraction = [Fraction alloc];
-    myFraction = [myFraction init];
+    [frac1 setNumerator: 2];
+    [frac1 setDenominator: 3];
     
-    [myFraction setNumerator: 1];
-    [myFraction setDenominator: 3];
+    [frac2 setNumerator: 3];
+    [frac2 setDenominator: 7];
     
-    NSLog(@"The value of myFraction is:");
-    [myFraction print];
-    [myFraction release];
+    NSLog(@"First fraction is:");
+    [frac1 print];
+
+    NSLog(@"Second fraction is:");
+    [frac2 print];
+
+    [frac1 release];
+    [frac2 release];
     
     [pool drain];
     return 0;
