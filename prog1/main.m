@@ -9,6 +9,8 @@
 -(void) print;
 -(void) setNumerator: (int) n;
 -(void) setDenominator: (int) d;
+-(int) numerator;
+-(int) denominator;
 @end
 
 @implementation Fraction
@@ -28,6 +30,16 @@
     denominator = d;
 }
 
+-(int) numerator
+{
+    return numerator;
+}
+
+-(int) denominator
+{
+    return denominator;
+}
+
 @end
 
 
@@ -35,25 +47,15 @@ int main(int argc, const char * argv[])
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    Fraction *frac1 = [[Fraction alloc] init];
-    Fraction *frac2 = [[Fraction alloc] init];
-    
-    [frac1 setNumerator: 2];
-    [frac1 setDenominator: 3];
-    
-    [frac2 setNumerator: 3];
-    [frac2 setDenominator: 7];
-    
-    NSLog(@"First fraction is:");
-    [frac1 print];
+    Fraction *myFraction = [[Fraction alloc] init];
 
-    NSLog(@"Second fraction is:");
-    [frac2 print];
+    [myFraction setNumerator: 1];
+    [myFraction setDenominator: 3];
 
-    [frac1 release];
-    [frac2 release];
-    
+    NSLog(@"The value of my fraction is: %i/%i", [myFraction numerator], [myFraction denominator]);
+    [myFraction release];
     [pool drain];
+    
     return 0;
 }
 
